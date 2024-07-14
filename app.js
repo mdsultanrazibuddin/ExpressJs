@@ -32,7 +32,9 @@ app.get('/about', (req, res) => {
 })
 
 
-
+function globalmiddleware (req, res, next) {
+    m                   
+}
 
 
 
