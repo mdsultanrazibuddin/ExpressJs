@@ -1,4 +1,4 @@
-const { error } = require('console');
+const { error, log } = require('console');
 const express = require ('express');
 const fs = require('fs')
 
@@ -6,7 +6,9 @@ const app = express();
 
 
 app.get('/', (req, res) => {
+    console.log(req.ip);
     fs.readFile('./pages/index.html', (err, data) =>{
+       
         if(err) {
             console.log('Error', err);
             res.send(' <h2>something is wrong</h2> ')
@@ -15,6 +17,7 @@ app.get('/', (req, res) => {
             res.write(data)
             res.end
         }
+        
     })
 })
 app.get('/home', (req, res) => {
@@ -23,6 +26,7 @@ app.get('/home', (req, res) => {
 app.get('/about', (req, res) => {
     res.send('i am pro')
 })
+
 
 
 
