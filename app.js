@@ -1,4 +1,4 @@
-const { error, log } = require('console');
+
 const express = require ('express');
 const fs = require('fs')
 
@@ -6,7 +6,7 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-    console.log(req.ip);
+    
     fs.readFile('./pages/index.html', (err, data) =>{
        
         if(err) {
